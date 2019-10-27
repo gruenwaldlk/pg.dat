@@ -34,7 +34,7 @@ namespace pg.texts.test.builder
             UnsortedDatFileBinaryFileBuilder unsortedDatFileBinaryFileBuilder = new UnsortedDatFileBinaryFileBuilder();
             DatFile datFile = unsortedDatFileBinaryFileBuilder.Build(new DatFileAttribute()
             {
-                Locale = translationListBuilder.Locale, Translations = translations
+                Translations = translations
             });
             Assert.IsNotNull(datFile);
         }

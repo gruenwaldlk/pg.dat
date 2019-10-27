@@ -7,7 +7,7 @@ using pg.util.interfaces;
 
 namespace pg.dat.typedef
 {
-    internal sealed class KeyTableRecord : IBinaryFile, ISizeable
+    internal sealed class KeyTableRecord : IBinaryFile, ISizeable, IComparable
     {
         private string _key;
         internal readonly Encoding ENCODING = Encoding.ASCII;
@@ -37,6 +37,16 @@ namespace pg.dat.typedef
         public uint Size()
         {
             return Convert.ToUInt32(GetBytes().Length);
+        }
+
+        public int CompareTo(object obj)
+        {
+            if (obj == null)
+            {
+                return 0;
+            }
+
+            return !(obj is KeyTableRecord r) ? 0 : Key.CompareTo(r.Key);
         }
     }
 }

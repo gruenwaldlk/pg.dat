@@ -7,7 +7,7 @@ using pg.util.interfaces;
 
 namespace pg.dat.typedef
 {
-    internal sealed class ValueTableRecord : IBinaryFile, ISizeable
+    internal sealed class ValueTableRecord : IBinaryFile, ISizeable, IComparable
     {
         private string _value;
         internal static readonly Encoding ENCODING = Encoding.Unicode;
@@ -37,6 +37,16 @@ namespace pg.dat.typedef
         public uint Size()
         {
             return Convert.ToUInt32(GetBytes().Length);
+        }
+
+        public int CompareTo(object obj)
+        {
+            if (obj == null)
+            {
+                return 0;
+            }
+
+            return !(obj is ValueTableRecord v) ? 0 : Value.CompareTo(v.Value);
         }
     }
 }

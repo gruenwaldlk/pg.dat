@@ -8,7 +8,7 @@ namespace pg.dat.builder
 {
     internal abstract class ATranslationListBuilder : IBinaryFileBuilder<List<Translation>, DatFile>
     {
-        public ATranslationListBuilder(CultureInfo locale)
+        protected ATranslationListBuilder(CultureInfo locale)
         {
             Locale = locale;
         }

@@ -11,7 +11,6 @@ namespace pg.dat.builder.attributes
     internal sealed class DatFileAttribute : IBuilderAttribute
     {
         private List<Translation> _translations;
-        internal CultureInfo Locale { get; set; }
 
         public List<Translation> Translations
         {
