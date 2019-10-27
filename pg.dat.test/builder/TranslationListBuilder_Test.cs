@@ -10,7 +10,7 @@ using pg.dat.utility;
 namespace pg.texts.test.builder
 {
     [TestClass]
-    public class TranslationListBuilderTest
+    public class TranslationListBuilder_Test
     {
         private static readonly string TEST_DATA_PATH_IN =
             Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\", "test_data\\mastertextfile_english.dat"));

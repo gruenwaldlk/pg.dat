@@ -9,6 +9,20 @@
         <Title>pg.dat</Title>
         <Authors>Lukas Grünwald</Authors>
         <Copyright>2019 - Lukas Grünwald</Copyright>
+        <Description>Implements the Petroglyph `*.DAT` file type in `C#`.
+
+Special thanks to [@MikeLankamp](https://github.com/MikeLankamp) for decoding the files and hosting them on [Petrolution](https://modtools.petrolution.net/docs/DatFileFormat).
+
+String Files (extension: .DAT) in Petroglyph's games hold `&lt;key, value&gt;` string pairs and allow the game to be easily ported across different languages by having a separate String File for each language. In such a case, the sets of keys are typically identical for the different language string files while the sets of values differ for each language.
+
+The keys are 8-bit ASCII strings and the values are 16-bit UTF-16LE strings.</Description>
+        <PackageProjectUrl>https://github.com/KadVenku/pg.dat</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/KadVenku/pg.dat/blob/master/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/KadVenku/pg.dat</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>petroglyph, alamo, glyphx</PackageTags>
+        <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     </PropertyGroup>
 
     <ItemGroup>

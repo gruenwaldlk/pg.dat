@@ -10,29 +10,29 @@ using pg.dat.utility;
 namespace pg.texts.test.builder
 {
     [TestClass]
-    public class SortedDatFileBinaryFileBuilderTest
+    public class UnsortedDatFileBinaryFileBuilder_Test
     {
         private static readonly string TEST_DATA_PATH_IN =
             Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\",
-                "test_data\\mastertextfile_english.dat"));
+                "test_data\\creditstext_english.dat"));
 
         [TestMethod]
-        public void BuildOrderedDatFileFromBinary_Test()
+        public void BuildUnsortedDatFile_Test()
         {
             byte[] b = File.ReadAllBytes(TEST_DATA_PATH_IN);
-            SortedDatFileBinaryFileBuilder builder = new SortedDatFileBinaryFileBuilder();
+            UnsortedDatFileBinaryFileBuilder builder = new UnsortedDatFileBinaryFileBuilder();
             DatFile datFile = builder.Build(b);
             Assert.IsNotNull(datFile);
         }
 
         [TestMethod]
-        public void BuildOrderedDatFileFromTranslationList_Test()
+        public void BuildUnsortedDatFileFromTranslationList_Test()
         {
             byte[] b = File.ReadAllBytes(TEST_DATA_PATH_IN);
-            TranslationListBuilder translationListBuilder = new TranslationListBuilder(new CultureInfo("en-GB"));
+            CreditsTranslationListBuilder translationListBuilder = new CreditsTranslationListBuilder(new CultureInfo("en-GB"));
             List<Translation> translations = translationListBuilder.Build(b);
-            SortedDatFileBinaryFileBuilder sortedDatFileBinaryFileBuilder = new SortedDatFileBinaryFileBuilder();
-            DatFile datFile = sortedDatFileBinaryFileBuilder.Build(new DatFileAttribute()
+            UnsortedDatFileBinaryFileBuilder unsortedDatFileBinaryFileBuilder = new UnsortedDatFileBinaryFileBuilder();
+            DatFile datFile = unsortedDatFileBinaryFileBuilder.Build(new DatFileAttribute()
             {
                 Translations = translations
             });
