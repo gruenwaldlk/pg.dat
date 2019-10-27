@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+        <AssemblyName>pg.dat</AssemblyName>
+        <RootNamespace>pg.dat</RootNamespace>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>pg.dat</PackageId>
+        <Title>pg.dat</Title>
+        <Authors>Lukas Grünwald</Authors>
+        <Copyright>2019 - Lukas Grünwald</Copyright>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="pg.util" Version="1.0.0" />
+    </ItemGroup>
+
+</Project>
