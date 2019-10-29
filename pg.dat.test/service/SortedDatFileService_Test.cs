@@ -13,13 +13,12 @@ namespace pg.texts.test.service
     [TestClass]
     public class SortedDatFileService_Test
     {
-        private static readonly string TEST_DATA_PATH_IN =
-            Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\",
-                "test_data\\mastertextfile_english.dat"));
+        private static readonly string TEST_DATA_PATH_IN = Path.GetFullPath(
+            Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "test_data", "mastertextfile_english.dat"));
 
-        private static readonly string TEST_DATA_PATH_OUT =
-            Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\",
-                "test_data\\test_mastertextfile_english.dat"));
+        private static readonly string TEST_DATA_PATH_OUT = Path.GetFullPath(
+            Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "test_data",
+                "test_mastertextfile_english.dat"));
 
         [TestMethod]
         public void LoadDatFile_Test()
@@ -65,9 +64,11 @@ namespace pg.texts.test.service
             Assert.IsTrue(datFile.GetTextItemCount() == translations.Count);
             foreach (Translation translation in translations)
             {
-                bool containsKey = datFile.GetKeys().Any(keyTableRecord => keyTableRecord.CompareTo(new KeyTableRecord(translation.Key)) == 0);
+                bool containsKey = datFile.GetKeys().Any(keyTableRecord =>
+                    keyTableRecord.CompareTo(new KeyTableRecord(translation.Key)) == 0);
                 Assert.IsTrue(containsKey);
-                bool containsValue = datFile.GetValues().Any(valueTableRecord => valueTableRecord.CompareTo(new ValueTableRecord(translation.Value)) == 0);
+                bool containsValue = datFile.GetValues().Any(valueTableRecord =>
+                    valueTableRecord.CompareTo(new ValueTableRecord(translation.Value)) == 0);
                 Assert.IsTrue(containsValue);
             }
         }

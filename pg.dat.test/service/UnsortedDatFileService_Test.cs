@@ -14,12 +14,14 @@ namespace pg.texts.test.service
     public class UnsortedDatFileService_Test
     {
         private static readonly string TEST_DATA_PATH_IN =
-            Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\",
-                "test_data\\creditstext_english.dat"));
+            Path.GetFullPath(
+                Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "test_data",
+                    "creditstext_english.dat"));
 
         private static readonly string TEST_DATA_PATH_OUT =
-            Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\",
-                "test_data\\test_creditstext_english.dat"));
+            Path.GetFullPath(
+                Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "test_data",
+                    "test_creditstext_english.dat"));
 
         [TestMethod]
         public void LoadDatFile_Test()
