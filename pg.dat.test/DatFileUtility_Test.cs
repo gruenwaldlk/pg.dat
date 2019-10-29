@@ -14,16 +14,18 @@ namespace pg.texts.test
     public class DatFileUtility_Test
     {
         private static readonly string TEST_DATA_SORTED_PATH_IN = Path.GetFullPath(
-            Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\", "test_data\\mastertextfile_english.dat"));
+            Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "test_data", "mastertextfile_english.dat"));
 
         private static readonly string TEST_DATA_SORTED_PATH_OUT = Path.GetFullPath(
-            Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\", "test_data\\test_mastertextfile_english.dat"));
+            Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "test_data",
+                "test_mastertextfile_english.dat"));
 
         private static readonly string TEST_DATA_UNSORTED_PATH_IN = Path.GetFullPath(
-            Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\", "test_data\\creditstext_english.dat"));
+            Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "test_data", "creditstext_english.dat"));
 
         private static readonly string TEST_DATA_UNSORTED_PATH_OUT = Path.GetFullPath(
-            Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\", "test_data\\test_creditstext_english.dat"));
+            Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "test_data",
+                "test_creditstext_english.dat"));
 
         private static readonly List<Translation> TRANSLATIONS = new List<Translation>
         {
@@ -66,7 +68,8 @@ namespace pg.texts.test
         [TestMethod]
         public void Import_TestSorted()
         {
-            IEnumerable<Translation> translations = DatFileUtility.Import(TEST_DATA_SORTED_PATH_IN, new CultureInfo("en-GB"));
+            IEnumerable<Translation> translations =
+                DatFileUtility.Import(TEST_DATA_SORTED_PATH_IN, new CultureInfo("en-GB"));
             Assert.IsNotNull(translations);
             Assert.IsTrue(translations.Any());
         }
@@ -83,9 +86,11 @@ namespace pg.texts.test
             Assert.IsTrue(datFile.GetTextItemCount() == TRANSLATIONS.Count);
             foreach (Translation translation in TRANSLATIONS)
             {
-                bool containsKey = datFile.GetKeys().Any(keyTableRecord => keyTableRecord.CompareTo(new KeyTableRecord(translation.Key)) == 0);
+                bool containsKey = datFile.GetKeys().Any(keyTableRecord =>
+                    keyTableRecord.CompareTo(new KeyTableRecord(translation.Key)) == 0);
                 Assert.IsTrue(containsKey);
-                bool containsValue = datFile.GetValues().Any(valueTableRecord => valueTableRecord.CompareTo(new ValueTableRecord(translation.Value)) == 0);
+                bool containsValue = datFile.GetValues().Any(valueTableRecord =>
+                    valueTableRecord.CompareTo(new ValueTableRecord(translation.Value)) == 0);
                 Assert.IsTrue(containsValue);
             }
         }
@@ -93,7 +98,8 @@ namespace pg.texts.test
         [TestMethod]
         public void Import_TestUnsorted()
         {
-            IEnumerable<Translation> translations = DatFileUtility.Import(TEST_DATA_UNSORTED_PATH_IN, new CultureInfo("en-GB"), FileType.UnsortedCreditsStringFile);
+            IEnumerable<Translation> translations = DatFileUtility.Import(TEST_DATA_UNSORTED_PATH_IN,
+                new CultureInfo("en-GB"), FileType.UnsortedCreditsStringFile);
             Assert.IsNotNull(translations);
             Assert.IsTrue(translations.Any());
         }

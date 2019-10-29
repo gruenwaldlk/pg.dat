@@ -12,9 +12,8 @@ namespace pg.texts.test.builder
     [TestClass]
     public class UnsortedDatFileBinaryFileBuilder_Test
     {
-        private static readonly string TEST_DATA_PATH_IN =
-            Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\",
-                "test_data\\creditstext_english.dat"));
+        private static readonly string TEST_DATA_PATH_IN = Path.GetFullPath(
+            Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "test_data", "creditstext_english.dat"));
 
         [TestMethod]
         public void BuildUnsortedDatFile_Test()
