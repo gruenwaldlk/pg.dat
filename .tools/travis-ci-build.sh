@@ -1,9 +1,9 @@
 #!/bin/sh
 echo "Executing MSBuild DLL begin command..."
-dotnet .tools/sonar/SonarScanner.MSBuild.dll begin /o:"kv" /k:"kv_pg.dat" /d:sonar.cs.vstest.reportsPaths="**/TestResults/*.trx" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.verbose=true /d:sonar.login="D0yJoWB8MN1m8OvE7ChpiDiyjvYggPHevhCGWAFlvpSQWxSkJR96L2FGqOhu48yx4r2NUSwo1Edafr+i+JviNIryctO00KcrHF0pjeb81VVeyr+AMv51IkxgjwagCfcgjEBRnO5+z/I098WRBzvU9bGtsplgP+/FSf2NTNjjaL9Ul57J7BPW8BS0ukqXye8IHXeTGKuPkdYs05xP5eeMmmT+L0bc6RR2wOBLx/VIiyPc1uPIQzcv6nXdnU73h+8lhg/8bun1a/FMGX7rlRoY86/PNAEBVI0VBIX8Om90itOXvDfJcSxUIeG3g3OEqotM3QlqxZLsmlDIFwQLQpA6jZSsxH65JZmJI78pqGUYSs8Y8tkGZP0kIfJrAXJ+Dq3WuCvhJ1cmotukF9FsN5/kNKmkLaCpAtqzJ3mJSkGPtKg0rgQsYWmDh4IoMxmzzVq2WPnxAanvke25jPhhodmxQGSDhzOEA8oMhl3uC8P5fMBQ6lBr6MywL0ppa0wc0dfnVAGUYjWnAdZgMevbbogf5m3xfx4Aopz7Y8kw/hjGvDvZxl9eWuoMWmHru+jjnrg7j7OPlFgX1Q3lEMHiGdXuNnFO8IkRbgSKCW6/PsL9YUqnIDE9gKZ/mZkOwIJiAUWq8kUObZKjxCCfsVY+4zlSnLQdj4bwC91GPTNvcIwVmFA="
+dotnet .tools/sonar/SonarScanner.MSBuild.dll begin /o:"kv" /k:"kv_pg.dat" /d:sonar.cs.vstest.reportsPaths="**/TestResults/*.trx" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.verbose=true /d:sonar.login=${SONAR_TOKEN}
 echo "Running build..."
 dotnet build pg.dat.sln
 echo "Running tests..."
 dotnet test pg.dat.test/pg.dat.test.csproj --logger:trx
 echo "Executing MSBuild DLL end command..."
-dotnet .tools/sonar/SonarScanner.MSBuild.dll end /d:sonar.login="D0yJoWB8MN1m8OvE7ChpiDiyjvYggPHevhCGWAFlvpSQWxSkJR96L2FGqOhu48yx4r2NUSwo1Edafr+i+JviNIryctO00KcrHF0pjeb81VVeyr+AMv51IkxgjwagCfcgjEBRnO5+z/I098WRBzvU9bGtsplgP+/FSf2NTNjjaL9Ul57J7BPW8BS0ukqXye8IHXeTGKuPkdYs05xP5eeMmmT+L0bc6RR2wOBLx/VIiyPc1uPIQzcv6nXdnU73h+8lhg/8bun1a/FMGX7rlRoY86/PNAEBVI0VBIX8Om90itOXvDfJcSxUIeG3g3OEqotM3QlqxZLsmlDIFwQLQpA6jZSsxH65JZmJI78pqGUYSs8Y8tkGZP0kIfJrAXJ+Dq3WuCvhJ1cmotukF9FsN5/kNKmkLaCpAtqzJ3mJSkGPtKg0rgQsYWmDh4IoMxmzzVq2WPnxAanvke25jPhhodmxQGSDhzOEA8oMhl3uC8P5fMBQ6lBr6MywL0ppa0wc0dfnVAGUYjWnAdZgMevbbogf5m3xfx4Aopz7Y8kw/hjGvDvZxl9eWuoMWmHru+jjnrg7j7OPlFgX1Q3lEMHiGdXuNnFO8IkRbgSKCW6/PsL9YUqnIDE9gKZ/mZkOwIJiAUWq8kUObZKjxCCfsVY+4zlSnLQdj4bwC91GPTNvcIwVmFA="
+dotnet .tools/sonar/SonarScanner.MSBuild.dll end /d:sonar.login=${SONAR_TOKEN}
