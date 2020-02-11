@@ -1,7 +1,12 @@
 language: csharp
 mono: none
 dotnet: 2.1.502
-solution: pg.dat.sln
+addons:
+  sonarcloud:
+    organization: "kv"
+before_install:
+- bash ./.tools/travis-ci-install-sonar.sh
+install:
+- dotnet restore
 script:
-  - dotnet restore
-  - dotnet test
+- bash ./.tools/travis-ci-build.sh
