@@ -15,6 +15,7 @@ install:
 
 before_script:
   - export PATH="$PATH:$HOME/.dotnet/tools"
+  - git fetch origin master
 
 script:
   - dotnet sonarscanner begin /k:$SONAR_PROJECT /o:$SONAR_ORGANIZATION /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login=$SONAR_TOKEN /d:sonar.language="cs" /d:sonar.exclusions="**/bin/**/*,**/obj/**/*" /d:sonar.coverage.exclusions="pg.dat.test/**,**/*Tests.cs,**/TestUtility.cs" /d:sonar.cs.opencover.reportsPaths="lcov.opencover.xml" || true
