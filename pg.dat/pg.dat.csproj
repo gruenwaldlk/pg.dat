@@ -23,6 +23,7 @@ The keys are 8-bit ASCII strings and the values are 16-bit UTF-16LE strings.</De
         <PackageTags>petroglyph, alamo, glyphx</PackageTags>
         <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <ProjectGuid>{F0B57FE6-22BD-4E46-A84B-22B682DF3CC6}</ProjectGuid>
     </PropertyGroup>
 
     <ItemGroup>
