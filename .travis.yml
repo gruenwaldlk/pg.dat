@@ -4,7 +4,7 @@ dotnet: 2.1.502
 
 addons:
   sonarcloud:
-    organization: $SONAR_ORGANIZATION
+    organization: "kv"
 
 solution: pg.dat/pg.dat.csproj
 

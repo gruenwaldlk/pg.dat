@@ -6,6 +6,7 @@
         <IsPackable>false</IsPackable>
 
         <RootNamespace>pg.texts.test</RootNamespace>
+        <ProjectGuid>{42CEBAB1-8605-43EC-AED9-590982A7C77D}</ProjectGuid>
     </PropertyGroup>
 
     <ItemGroup>
